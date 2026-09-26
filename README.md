@@ -6,10 +6,6 @@ This repository contains replication materials for the manuscript:
 
 The study examines whether national artificial intelligence (AI) research capacity is associated with economic water-use efficiency (WUE), and whether this relationship varies with structural water stress. The analysis covers 2016–2023, distinguishes within-country changes from between-country differences using a Mundlak specification, and also examines sectoral heterogeneity in agricultural, industrial, and services WUE.
 
-## Repository status
-
-This repository is being prepared as the replication package for the manuscript. Documentation and the repository structure are available now. Analysis scripts, replication-ready data files, figures, and model outputs will be added after final verification.
-
 ## Study design
 
 - **Period:** 2016–2023
@@ -20,7 +16,7 @@ This repository is being prepared as the replication package for the manuscript.
 - **Estimation strategy:** Mundlak within-between decomposition with country-clustered robust standard errors
 - **Additional analyses:** sectoral WUE models, alternative samples, alternative AI indicators, and robustness checks
 
-The main estimation sample contains **1,156 observations from 151 countries**. The moderation sample contains **1,086 observations from 142 countries**.
+The main estimation sample contains **1,156 observations from 151 countries**. The water-stress moderation sample contains **1,086 observations from 142 countries**.
 
 ## Repository structure
 
@@ -31,17 +27,37 @@ The main estimation sample contains **1,156 observations from 151 countries**. T
 ├── code/
 │   └── README.md
 ├── data/
-│   └── README.md
+│   ├── README.md
+│   └── Final_Data.xlsx
 ├── figures/
 │   └── README.md
 └── output/
     └── README.md
 ```
 
-- **code/** — scripts used for data preparation, main models, sectoral analyses, robustness checks, and figure production.
-- **data/** — documentation for source data and, where redistribution is permitted, processed replication files.
-- **figures/** — figures reproduced from the analysis workflow.
-- **output/** — regression tables, diagnostics, and other reproducible model outputs.
+- **data/** contains the replication workbook and documentation for the data sources, variables, country coverage, analytical panel, and sample construction.
+- **code/** will contain the scripts used for the main, sectoral, robustness, and figure analyses.
+- **figures/** will contain the figures reproduced from the analysis workflow.
+- **output/** will contain reproducible regression tables, diagnostics, and related model output.
+
+## Replication data
+
+The main replication workbook is **Final_Data.xlsx**. It contains the source extracts used in the study, variable documentation, country identifiers, the merged analytical panel, and a concise record of sample construction.
+
+The workbook is organized into the following sheets:
+
+- **README** — short description of the workbook
+- **Sources** — source and version information
+- **Variables** — variable names, definitions, units, and transformations
+- **Countries** — country names and ISO3 identifiers
+- **FAO_WUE** — total and sectoral water-use efficiency data
+- **AI_Metrics** — AI research and related activity measures
+- **Water_Stress** — WRI Aqueduct baseline water-stress data
+- **WDI_Controls** — World Development Indicators used as controls
+- **WDI_Research** — research-capacity indicators from WDI
+- **WDI_Metadata** — WDI indicator metadata
+- **Analysis_Data** — merged country-year panel used to construct the estimation samples
+- **Sample_Summary** — sample-construction counts and country coverage
 
 ## Data sources
 
@@ -75,9 +91,7 @@ https://databank.worldbank.org/source/world-development-indicators
 
 ## Reproducibility
 
-The final replication workflow will document the sequence from source-data preparation to the tables and figures reported in the manuscript.
-
-Third-party source files will only be redistributed when their licensing and terms of use permit it. Where redistribution is restricted or unclear, the `data/README.md` file will provide the official source, variable definitions, version information, and reconstruction instructions rather than republishing the original file.
+The replication materials are being organized so that the analytical sample, reported models, and figures can be reconstructed from the documented data and code. Source files are redistributed only where their terms of use allow it; otherwise, the official source and reconstruction information are documented in the data folder.
 
 ## Planned reproducible outputs
 
@@ -99,10 +113,8 @@ ORCID: https://orcid.org/0009-0004-7795-0001
 
 ## Citation
 
-A formal article citation will be added after publication. For the repository itself, citation metadata are provided in `CITATION.cff`.
+A formal article citation will be added after publication. Repository citation metadata are provided in `CITATION.cff`.
 
 ## Contact
-
-For questions about the replication materials:
 
 244107010@tarsus.edu.tr
