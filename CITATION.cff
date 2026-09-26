@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use these replication materials, please cite this repository. The article citation will be added after publication."
+title: "AI Research Capacity and Water Efficiency: Replication Materials"
+type: dataset
+authors:
+  - family-names: "Eren"
+    given-names: "Yaşar"
+    orcid: "https://orcid.org/0009-0004-7795-0001"
+repository-code: "https://github.com/yasarerenn/AI-Research-Capacity-and-Water-Efficiency"
+url: "https://github.com/yasarerenn/AI-Research-Capacity-and-Water-Efficiency"
+date-released: "2026-09-27"
+version: "0.1.0"
