@@ -1,29 +1,43 @@
 # Code
 
-This directory will contain the scripts used to reproduce the analytical workflow reported in the manuscript.
+The scripts in this folder reproduce the descriptive statistics, main models, sectoral models, robustness checks, measurement-sensitivity analyses, and figures reported in the manuscript.
 
-## Planned workflow
+## Files
 
-The scripts will be organized in execution order:
+- `model_utils.py` — shared functions for loading the replication data, constructing within- and between-country components, estimating the Mundlak specifications, and writing output files.
+- `01_descriptives.py` — Table 2 descriptive statistics and variance inflation factors.
+- `02_main_models.py` — the three main total-WUE models and the Mundlak joint test.
+- `03_sectoral_models.py` — total, agricultural, industrial, and services WUE moderation models.
+- `04_robustness.py` — sample, control, regional, zero-coding, and measurement-sensitivity checks.
+- `05_figures.py` — Figures 1–3.
+- `../run_all.py` — runs the scripts in order.
 
-1. `01_data_preparation` — import, harmonize, transform, and merge the source datasets.
-2. `02_main_models` — estimate the main Mundlak within-between models for total economic WUE.
-3. `03_sectoral_models` — estimate agricultural, industrial, and services WUE models.
-4. `04_robustness_checks` — reproduce alternative samples, alternative controls, and measurement-sensitivity analyses.
-5. `05_figures` — reproduce the marginal-relationship and sectoral-heterogeneity figures.
+## Software
 
-Exact file extensions and software requirements will be added when the original analysis scripts are deposited.
+The scripts use Python 3 and the packages listed in `requirements.txt`:
 
-## Estimation details
+```bash
+python -m pip install -r requirements.txt
+```
 
-The main models:
+## Reproduction
 
-- decompose time-varying explanatory variables into within-country and between-country components;
-- include year fixed effects;
-- use robust standard errors clustered by country;
-- mean center baseline water stress before constructing the interaction terms;
-- report marginal relationships with 95% confidence intervals for the moderation analysis.
+Place `analysis_data.csv` in the `data/` folder and run from the repository root:
 
-## Reproduction order
+```bash
+python run_all.py
+```
 
-Once the scripts are uploaded, this file will specify the exact command order and the expected input/output files for each step.
+The scripts write regression tables and diagnostics to `output/` and figures to `figures/`.
+
+## Model specification
+
+The main specification:
+
+- separates each time-varying regressor into within-country and between-country components;
+- includes year fixed effects with 2016 as the reference year;
+- uses OLS with standard errors clustered by country;
+- centers baseline water stress at the estimation-sample mean;
+- interacts centered water stress separately with the within- and between-country AI components.
+
+The baseline controls are log GDP per capita, agriculture share of GDP, industry share of GDP, urbanization, internet use, and trade openness. The robustness script adds the alternative controls and sample restrictions described in the manuscript.
