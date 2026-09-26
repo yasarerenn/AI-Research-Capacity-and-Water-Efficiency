@@ -1,6 +1,11 @@
 # Data
 
-The replication workbook used for this project is **Final_Data.xlsx**. It brings together the data documentation, source extracts, merged analytical panel, and sample-construction information used in the manuscript.
+Two versions of the replication data are used in this project:
+
+- **Final_Data.xlsx** — human-readable workbook containing source documentation, variables, source extracts, the merged country-year panel, and sample-construction information.
+- **analysis_data.csv** — machine-readable export of the `Analysis_Data` sheet used directly by the Python scripts.
+
+The small files **variables.csv** and **sample_summary.csv** are convenience exports of the corresponding workbook sheets.
 
 ## Workbook contents
 
@@ -21,13 +26,12 @@ The replication workbook used for this project is **Final_Data.xlsx**. It brings
 
 ## Sample construction
 
-The workbook records the following sequence:
-
 - Matched country-year grid: **1,464 observations, 183 countries**
 - Total WUE available: **1,336 observations, 167 countries**
 - Baseline estimation sample: **1,156 observations, 151 countries**
 - Water-stress moderation sample: **1,086 observations, 142 countries**
 - Balanced baseline sample: **1,072 observations, 134 countries**
+- Balanced moderation sample used in robustness checks: **1,016 observations, 127 countries**
 
 ## Source datasets
 
@@ -48,7 +52,9 @@ The WUE measures are transformed using the natural logarithm in the regression m
 **Zenodo record:** https://doi.org/10.5281/zenodo.22772306  
 **Documentation:** https://eto.tech/dataset-docs/country-ai-activity-metrics/
 
-The main AI measure is the annual number of AI-related scientific articles per million people. The transformed measure used in the models is `ln(1+x)`.
+The main AI measure is the annual number of AI-related scientific articles per million people. The model uses `ln(1+x)`.
+
+For measurement sensitivity, private AI investment and AI patent applications are divided by population in millions and transformed as `ln(1+x)`.
 
 ### WRI Aqueduct 4.0
 
@@ -57,7 +63,7 @@ The main AI measure is the annual number of AI-related scientific articles per m
 **Source:**  
 https://www.wri.org/research/aqueduct-40-updated-decision-relevant-global-water-risk-indicators
 
-The country-level indicator is treated as time invariant over the study period and is mean centered before interaction with the within- and between-country AI components.
+The country-level score is treated as time invariant and centered at the estimation-sample mean before interaction.
 
 ### World Development Indicators
 
@@ -65,8 +71,10 @@ The country-level indicator is treated as time invariant over the study period a
 **Source:**  
 https://databank.worldbank.org/source/world-development-indicators
 
-Variables include population, GDP per capita, agriculture and industry shares of GDP, urbanization, internet use, trade openness, R&D expenditure, researcher intensity, and renewable internal freshwater resources per capita.
+Variables include population, GDP per capita, agriculture and industry shares of GDP, urbanization, internet use, trade openness, scientific publications, R&D expenditure, researcher intensity, and renewable internal freshwater resources per capita.
+
+The alternative freshwater specification uses `ln(1 + renewable internal freshwater resources per capita)`, which retains valid zero values.
 
 ## Notes on redistribution
 
-The workbook documents the original sources and the transformations used in the study. Original third-party source files should only be redistributed where their terms of use permit it. When redistribution is restricted or unnecessary, users can reconstruct the relevant inputs from the source information reported in the workbook and this README.
+The workbook documents the original sources and transformations used in the study. Original third-party source files should only be redistributed where their terms of use permit it. When redistribution is restricted or unnecessary, users can reconstruct the relevant inputs from the source information reported in the workbook and this README.
