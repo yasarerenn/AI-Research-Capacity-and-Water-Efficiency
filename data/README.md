@@ -78,3 +78,5 @@ The alternative freshwater specification uses `ln(1 + renewable internal freshwa
 ## Notes on redistribution
 
 The workbook documents the original sources and transformations used in the study. Original third-party source files should only be redistributed where their terms of use permit it. When redistribution is restricted or unnecessary, users can reconstruct the relevant inputs from the source information reported in the workbook and this README.
+
+Source-specific licence and attribution information is summarized in `../DATA_SOURCES_AND_LICENSES.md`. The processed files in this folder do not override the terms of the original data providers.
