@@ -1,0 +1,25 @@
+Sample construction,,,
+Step,Observations,Countries,Note
+Matched country-year grid,1464,183,183 countries observed over eight years
+Total WUE available,1336,167,Rows with observed total water-use efficiency
+Baseline estimation sample,1156,151,Total WUE and all baseline controls available
+Water-stress moderation sample,1086,142,Baseline sample with valid WRI water-stress score
+Balanced baseline sample,1072,134,Countries with complete baseline data for all eight years
+"Countries without total WUE observations, 2016-2023",,,
+ISO3,Country,,
+AND,Andorra,,
+BHS,Bahamas,,
+BIH,Bosnia and Herzegovina,,
+BRN,Brunei Darussalam,,
+DJI,Djibouti,,
+DMA,Dominica,,
+GNQ,Equatorial Guinea,,
+GRD,Grenada,,
+KNA,Saint Kitts and Nevis,,
+LCA,Saint Lucia,,
+LIE,Liechtenstein,,
+PLW,Palau,,
+PNG,Papua New Guinea,,
+SMR,San Marino,,
+TON,Tonga,,
+WSM,Samoa,,
