@@ -1,0 +1,34 @@
+Variable,Description,Role,Unit / transformation,Source,Notes
+iso3,ISO-3 country code,Identifier,Text,Cross-source,Primary merge key
+country,Country name,Identifier,Text,Cross-source,Canonical display name
+year,Calendar year,Identifier,2016-2023,Cross-source,Annual panel
+wue_total,Economic water-use efficiency - total,Dependent,USD/m3,FAO SDG 6.4.1,"Economic efficiency, not direct water saving"
+wue_agri,Agricultural WUE,Sectoral dependent,USD/m3,FAO SDG 6.4.1,Sectoral heterogeneity
+wue_ind,Industrial WUE,Sectoral dependent,USD/m3,FAO SDG 6.4.1,Sectoral heterogeneity
+wue_serv,Services WUE,Sectoral dependent,USD/m3,FAO SDG 6.4.1,Sectoral heterogeneity
+ai_articles,AI research articles,Main independent,Count,ETO/CSET,Measures research activity/capacity
+ai_zero_imputed,ETO sparse missing row completed as zero,Audit flag,0/1,ETO/CSET,Retained from v1 for auditability
+ai_articles_pm,AI articles per million population,Derived main independent,articles / 1m population,ETO + WDI population,Scale-adjusted preferred AI measure
+ln_ai_articles_pm,Log AI articles per million,Derived main independent,ln(1+x),Derived,Reduces right skew
+ai_patent_apps,AI patent applications,Robustness AI,Count,ETO/CSET,Priority filing country; complete window shorter
+ai_invest_est_musd,Estimated private AI investment,Robustness AI,Million USD,ETO/CSET,Private-market activity
+water_stress_score,Baseline water stress,Moderator,0-5 score,WRI Aqueduct 4.0,"Structural, time-invariant"
+population,Population total,Denominator/control,Persons,WDI SP.POP.TOTL,100% coverage in core sample
+agri_share,Agriculture value added,Baseline control,% GDP,WDI NV.AGR.TOTL.ZS,Economic structure
+industry_share,Industry value added,Baseline control,% GDP,WDI NV.IND.TOTL.ZS,Economic structure
+urban_share,Urban population,Baseline control,% population,WDI SP.URB.TOTL.IN.ZS,Urbanization
+internet_share,Internet users,Baseline control,% population,WDI IT.NET.USER.ZS,General digitalization
+trade_share,Trade openness,Baseline control,% GDP,WDI NE.TRD.GNFS.ZS,Largest source of baseline attrition
+gdp_pc,GDP per capita,Robustness control,Constant 2015 US$,WDI NY.GDP.PCAP.KD,No additional loss within baseline sample
+freshwater_pc,Renewable internal freshwater resources per capita,Alternative scarcity measure,m3 per capita,WDI ER.H2O.INTR.PC,2023 unavailable; robustness limited to 2016-2022
+ln_wue_total,Log total WUE,Derived outcome,ln(WUE),Derived,Used if log outcome specification chosen
+baseline_complete,Row is eligible for baseline specification,Sample flag,0/1,Derived,Requires observed WUE plus all baseline controls
+baseline_balanced_country,Country has complete baseline rows for all 8 years,Sample flag,0/1,Derived,134 countries
+scientific_articles,Scientific and technical journal articles,General scientific-capacity control,Fractional count,WDI IP.JRN.ARTC.SC,Broad science/engineering publication output; not AI-specific.
+scientific_articles_pm,Scientific/technical articles per million population,Derived robustness control,Articles per million,Derived from IP.JRN.ARTC.SC + population,Scale-adjusted general research capacity.
+ln_scientific_articles_pm,Log scientific/technical articles per million,Derived robustness control,ln(1+x),Derived,Primary general-science control in robustness model.
+rd_exp_gdp,R&D expenditure,Additional robustness control,% GDP,WDI GB.XPD.RSDV.GD.ZS,Sparse; use only in reduced-sample robustness.
+researchers_per_million,Researchers in R&D,Additional robustness control,Per million people,WDI SP.POP.SCIE.RD.P6,Sparse; use only in reduced-sample robustness.
+water_stress_score_clean,Cleaned baseline water stress,Moderator,WRI score,Derived from WRI,Only WRI -9999 NoData and true blanks are converted to blank; valid 0 scores are retained.
+water_stress_valid,Valid WRI water-stress observation,Sample flag,0/1,Derived,1 for numeric cleaned WRI scores including 0; 0 only when WRI stress is missing/NoData.
+main_moderation_sample,Eligible for main moderation model,Sample flag,0/1,Derived,Requires baseline+GDP eligibility and a valid WRI water-stress score; robustness controls do not define the main moderation sample.
