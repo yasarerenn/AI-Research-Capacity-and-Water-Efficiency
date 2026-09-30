@@ -4,7 +4,7 @@ This repository contains replication materials for the manuscript:
 
 **Artificial Intelligence Research Capacity and Economic Water Use Efficiency: Associations Within and Between Countries under Structural Water Stress**
 
-The study examines whether national artificial intelligence (AI) research capacity is associated with economic water-use efficiency (WUE), and whether this relationship varies with structural water stress. The analysis covers 2016–2023, distinguishes within-country changes from between-country differences using a Mundlak specification, and examines sectoral heterogeneity in agricultural, industrial, and services WUE.
+The study examines whether national artificial intelligence (AI) research capacity is associated with economic water-use efficiency (WUE), and whether this relationship varies with structural water stress. The analysis covers 2016–2023, distinguishes variation within countries from differences between countries using a Mundlak specification, and examines sectoral heterogeneity in agricultural, industrial, and services WUE.
 
 ## Study design
 
@@ -76,7 +76,7 @@ python run_all.py
 
 The scripts reproduce the descriptive statistics, the three main Mundlak models, sectoral models, robustness checks, measurement-sensitivity analyses, and the analytical content underlying Figures 1–3. Tables and diagnostic output are written to `output/`. The PNG files in `figures/` are the final manuscript versions; `code/05_figures.py` generates equivalent analytical figures as SVG files.
 
-The current workflow has been checked against the manuscript results. In particular, it reproduces the main between-country AI research capacity × water stress interaction for total WUE (β ≈ 0.085, SE ≈ 0.029) and industrial WUE (β ≈ 0.156, SE ≈ 0.042), together with the reported sample sizes and R² values.
+The current workflow has been checked against the manuscript results. In particular, it reproduces the interaction between the between component of AI research capacity and water stress for total WUE (β ≈ 0.085, SE ≈ 0.029) and industrial WUE (β ≈ 0.156, SE ≈ 0.042), together with the reported sample sizes and R² values.
 
 **Tested environment:** Python 3.13.5, NumPy 2.3.5, statsmodels 0.14.6, and Matplotlib 3.10.8.
 
