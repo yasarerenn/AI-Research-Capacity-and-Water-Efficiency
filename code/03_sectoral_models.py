@@ -24,11 +24,11 @@ for label, outcome in outcomes:
     models.append((label, result))
 
 keys = [
-    ("AI research capacity, within country", "ln_ai_articles_pm_within"),
-    ("AI research capacity, between country", "ln_ai_articles_pm_between"),
+    ("AI research capacity, within component", "ln_ai_articles_pm_within"),
+    ("AI research capacity, between component", "ln_ai_articles_pm_between"),
     ("Baseline water stress", "moderator_c"),
-    ("AI within country x water stress", "ai_within_x_mod"),
-    ("AI between country x water stress", "ai_between_x_mod"),
+    ("AI within component and water stress interaction", "ai_within_x_mod"),
+    ("AI between component and water stress interaction", "ai_between_x_mod"),
 ]
 
 output = []
