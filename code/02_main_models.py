@@ -20,11 +20,11 @@ m3 = fit_mundlak(
 )
 
 terms = [
-    ("AI research capacity, within country", "ln_ai_articles_pm_within"),
-    ("AI research capacity, between country", "ln_ai_articles_pm_between"),
+    ("AI research capacity, within component", "ln_ai_articles_pm_within"),
+    ("AI research capacity, between component", "ln_ai_articles_pm_between"),
     ("Baseline water stress", "moderator_c"),
-    ("AI within country x water stress", "ai_within_x_mod"),
-    ("AI between country x water stress", "ai_between_x_mod"),
+    ("AI within component and water stress interaction", "ai_within_x_mod"),
+    ("AI between component and water stress interaction", "ai_between_x_mod"),
 ]
 
 out = []
@@ -74,5 +74,5 @@ write_csv(
 print("Model 1:", m1["n"], m1["countries"], round(m1["r2"], 3))
 print("Model 2:", m2["n"], m2["countries"], round(m2["r2"], 3))
 print("Model 3:", m3["n"], m3["countries"], round(m3["r2"], 3))
-print("AI between x water stress:", term(m3, "ai_between_x_mod"))
+print("AI between component and water stress interaction:", term(m3, "ai_between_x_mod"))
 print("Mundlak joint F:", float(joint.fvalue), "p=", float(joint.pvalue))
