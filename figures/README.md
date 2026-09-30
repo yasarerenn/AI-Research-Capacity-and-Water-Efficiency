@@ -3,8 +3,8 @@
 This folder contains the final figures used in the manuscript:
 
 - `Figure_1_sample_construction.png` — sample construction and data matching process.
-- `Figure_2_marginal_relationship.png` — conditional between-country relationship between AI research capacity and total economic WUE across baseline water-stress levels.
-- `Figure_3_sectoral_heterogeneity.png` — between-country interaction coefficients and 95% confidence intervals for total, agricultural, industrial, and services WUE.
+- `Figure_2_marginal_relationship.png` — conditional association of the between component of AI research capacity with total economic WUE across baseline water-stress levels.
+- `Figure_3_sectoral_heterogeneity.png` — interaction estimates for the between component and 95% confidence intervals for total, agricultural, industrial, and services WUE.
 
 The replication script `code/05_figures.py` also generates equivalent analytical versions of Figures 1–3 as SVG files.
 
