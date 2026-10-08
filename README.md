@@ -101,9 +101,7 @@ The analysis code is released under the MIT License as described in `LICENSE-COD
 
 ## Author
 
-**Yaşar Eren**  
-Tarsus University, School of Graduate Studies, Department of Business Administration  
-ORCID: https://orcid.org/0009-0004-7795-0001
+
 
 ## Citation
 
